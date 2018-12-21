@@ -11,10 +11,10 @@ module GithubIssuesList
       @token = ENV.fetch("GITHUB_ISSUES_LIST_TOKEN", "")
       parse_options
 
-      if @query_path.nil?
+      if @query_path.empty?
         STDERR.puts "ERROR: github_issues_list requires to be called either with --org or --repo flag."
       end
-      if @token.nil?
+      if @token.empty?
         STDERR.puts "ERROR: github_issues_list requires a GitHub API token to fetch issues."
       end
     end
